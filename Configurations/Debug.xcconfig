@@ -1,0 +1,2 @@
+#include "Shared.xcconfig"
+DW_ENVIRONMENT = Debug

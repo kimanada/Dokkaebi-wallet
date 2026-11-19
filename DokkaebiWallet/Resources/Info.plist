@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- 나머지 키는 빌드 설정(GENERATE_INFOPLIST_FILE, INFOPLIST_KEY_*)이 생성한다 -->
+	<key>DWEnvironment</key>
+	<string>$(DW_ENVIRONMENT)</string>
+	<key>DWSupabaseURL</key>
+	<string>$(SUPABASE_URL)</string>
+	<key>DWSupabaseAnonKey</key>
+	<string>$(SUPABASE_ANON_KEY)</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+</dict>
+</plist>

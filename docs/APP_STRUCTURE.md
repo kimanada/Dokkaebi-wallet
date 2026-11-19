@@ -54,7 +54,13 @@
 
 ## 2. 폴더 및 파일 구조
 
-Xcode 프로젝트 1개와 로컬 Swift Package로 모듈을 나눈다. 모듈 경계 덕분에 빌드 시간이 줄고 의존 방향을 강제할 수 있다.
+> **2단계(프로젝트 초기 구축) 적용 현황**: 초기에는 단일 앱 타깃 안에서 폴더로 계층을 나눈다.
+> `App / Core / DesignSystem / Models / Services / Repositories / ViewModels / Features / Resources`.
+> 기능별 폴더(`Features/<기능>/Views, ViewModels, Models`)와 아래 모듈의 책임 구분은 같다. 코드가 커지면 아래 구조대로 로컬 Swift Package로 분리한다.
+> 의존 방향 규칙(§2.1)은 폴더 단위로 지킨다. ViewModel·Model·Repository·Core는 SwiftUI를 import하지 않는다. 그래서 Linux Swift 툴체인에서도 컴파일과 테스트를 할 수 있다.
+> Xcode 프로젝트는 `scripts/generate_project.rb`로 만든다. 색상과 앱 아이콘은 `scripts/generate_assets.py`로 만든다.
+
+최종 목표 구조: Xcode 프로젝트 1개와 로컬 Swift Package로 모듈을 나눈다. 모듈 경계 덕분에 빌드 시간이 줄고 의존 방향을 강제할 수 있다.
 
 ```
 DokkaebiWallet/
