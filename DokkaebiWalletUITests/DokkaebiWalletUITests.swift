@@ -35,6 +35,11 @@ final class DokkaebiWalletUITests: XCTestCase {
 
     func testAccessibilityAuditOnHome() throws {
         XCTAssertTrue(app.descendants(matching: .any)["screen.home"].waitForExistence(timeout: 10))
-        try app.performAccessibilityAudit(for: [.contrast, .elementDetection, .hitRegion])
+        try app.performAccessibilityAudit(for: [.contrast, .elementDetection, .hitRegion]) { issue in
+            // 실패 원인을 CI 로그에서 바로 볼 수 있도록 요소 정보를 남긴다 (문제는 무시하지 않음).
+            print("AUDIT-ISSUE: \(issue.auditType) | \(issue.compactDescription) | " +
+                  "\(issue.element?.label ?? "-") | \(issue.element?.identifier ?? "-") | \(issue.element?.elementType.rawValue ?? -1)")
+            return false
+        }
     }
 }

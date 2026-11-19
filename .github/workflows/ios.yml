@@ -71,7 +71,7 @@ jobs:
             -destination "id=${{ steps.sim.outputs.udid }}" \
             -derivedDataPath build \
             -only-testing:DokkaebiWalletUITests \
-            | tee ui.log | grep -E "Test Case.*(passed|failed)|error:|TEST (SUCCEEDED|FAILED)|Executed" || true
+            | tee ui.log | grep -E "AUDIT-ISSUE|Test Case.*(passed|failed)|error:|TEST (SUCCEEDED|FAILED)|Executed" || true
           grep -q "TEST EXECUTE SUCCEEDED" ui.log
 
       - name: 로그 보관
