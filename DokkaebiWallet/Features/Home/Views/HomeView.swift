@@ -159,8 +159,9 @@ private struct MonthlySummaryCard: View {
                 Divider().overlay(DWColor.border)
 
                 // 공동 지출 vs 개인 지출 (FR-HOME-03)
-                VStack(alignment: .leading, spacing: DWSpacing.sm) {
-                    Text("공동 지출과 개인 지출").dwFont(.footnote, color: DWColor.textSecondary)
+                VStack(alignment: .leading, spacing: DWSpacing.md) {
+                    // 막대와 가깝게 붙이면 접근성 감사가 막대 색을 배경으로 측정하므로 간격을 두고 기본 텍스트색을 쓴다.
+                    Text("공동 지출과 개인 지출").dwFont(.footnote).fontWeight(.medium)
                     SharedPersonalBar(shared: summary.sharedExpense, personal: summary.personalExpense)
                     HStack {
                         LegendItem(color: DWColor.primary, title: "공동", amount: summary.sharedExpense)
