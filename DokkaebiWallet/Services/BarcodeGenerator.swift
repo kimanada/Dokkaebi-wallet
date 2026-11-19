@@ -1,6 +1,6 @@
 import Foundation
 #if canImport(UIKit) && canImport(CoreImage)
-import CoreImage
+@preconcurrency import CoreImage
 import CoreImage.CIFilterBuiltins
 import UIKit
 
@@ -13,7 +13,8 @@ enum BarcodeGenerator {
         case invalidValue
     }
 
-    private static let context = CIContext()
+    /// CIContext는 스레드 안전하며 생성 비용이 커서 재사용한다 (Apple 문서 기준).
+    nonisolated(unsafe) private static let context = CIContext()
 
     static func isSupported(_ type: BarcodeType) -> Bool {
         switch type {

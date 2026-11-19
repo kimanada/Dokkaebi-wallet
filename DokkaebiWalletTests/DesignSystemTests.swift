@@ -16,7 +16,7 @@ struct DesignSystemTests {
     }
 
     /// 글자색/배경색 조합 (DESIGN_SYSTEM.md §2.4). 골드는 장식 전용이라 제외한다.
-    static let contrastPairs: [(text: String, background: String)] = [
+    nonisolated static let contrastPairs: [(text: String, background: String)] = [
         ("textPrimary", "bgCanvas"), ("textPrimary", "bgSurface"), ("textPrimary", "bgSubtle"),
         ("textSecondary", "bgCanvas"), ("textSecondary", "bgSurface"), ("textSecondary", "bgSubtle"),
         ("textTertiary", "bgCanvas"), ("textTertiary", "bgSurface"), ("textTertiary", "bgSubtle"),
@@ -41,7 +41,7 @@ struct DesignSystemTests {
     }
 
     /// WCAG 2.x 상대 휘도 기반 대비
-    static func contrastRatio(_ a: UIColor, _ b: UIColor) -> Double {
+    nonisolated static func contrastRatio(_ a: UIColor, _ b: UIColor) -> Double {
         func luminance(_ color: UIColor) -> Double {
             var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, alpha: CGFloat = 0
             color.getRed(&r, green: &g, blue: &b, alpha: &alpha)
