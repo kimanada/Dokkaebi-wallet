@@ -29,7 +29,7 @@ private struct DWToastModifier: ViewModifier {
                             self.toast = nil
                         }
                         .fontWeight(.semibold)
-                        .foregroundStyle(DWColor.gold)
+                        .foregroundStyle(DWColor.primarySoft)
                     }
                 }
                 .font(DWTypography.subheadline.font)

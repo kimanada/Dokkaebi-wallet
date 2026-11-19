@@ -65,7 +65,7 @@ struct DWButtonStyle: ButtonStyle {
         switch kind {
         case .primary: return DWColor.onPrimary
         case .secondary, .tertiary: return DWColor.primary
-        case .destructive: return .white
+        case .destructive: return DWColor.canvas
         }
     }
 

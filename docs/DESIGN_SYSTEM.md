@@ -37,17 +37,17 @@
 | `accent.brown` | `#7A5C43` | `#C4A386` | 보조 텍스트 강조, 아이콘 |
 | `text.primary` | `#1E1E1C` | `#F2F0EA` | 본문 |
 | `text.secondary` | `#5F5A52` | `#B5B0A6` | 보조 |
-| `text.tertiary` | `#8F897E` | `#7F7A71` | 플레이스홀더, 비활성 (본문에는 쓰지 않음) |
+| `text.tertiary` | `#6F695F` | `#99948A` | 메타 정보, 플레이스홀더 (작은 글자에도 4.5:1 이상) |
 | `border.default` | `#E6E0D4` | `#33372F` | 카드 테두리 (0.5pt) |
 | `border.strong` | `#CFC6B5` | `#4A4F46` | 입력 포커스 전 상태 |
 
 ### 2.2 의미 색상
 | 토큰 | 라이트 | 다크 | 용도 |
 |---|---|---|---|
-| `semantic.income` | `#2E7D5B` | `#7CC4A0` | 수입 금액 |
+| `semantic.income` | `#28704F` | `#7CC4A0` | 수입 금액 |
 | `semantic.expense` | `#1E1E1C` (text.primary) | `#F2F0EA` | 지출 금액. 빨간색을 쓰지 않아 불안감을 줄인다 |
 | `semantic.transfer` | `#5F5A52` | `#B5B0A6` | 이체 |
-| `semantic.success` | `#2E7D5B` | `#7CC4A0` | |
+| `semantic.success` | `#28704F` | `#7CC4A0` | |
 | `semantic.warning` | `#95600F` | `#E3B45C` | 예산 80% |
 | `semantic.danger` | `#B3412E` | `#EE8A76` | 예산 초과, 삭제, 오류 |
 | `semantic.info` | `#3A6A8C` | `#8DB7D6` | 안내 |
@@ -80,8 +80,9 @@
 
 ### 2.4 대비 기준
 - 본문 텍스트는 4.5:1 이상, 큰 텍스트(17pt Bold / 24pt 이상)는 3:1 이상.
-- 계산으로 확인한 조합 (WCAG 상대 휘도 공식): `text.primary`/`bg.canvas` 15.6:1, `brand.primary`/`bg.canvas` 9.0:1, `text.secondary`/`bg.surface` 6.8:1, `brand.onPrimary`/`brand.primary` 9.6:1, `accent.brown`/`bg.canvas` 5.7:1, `semantic.income`/`bg.surface` 5.0:1, `semantic.danger`/`bg.surface` 5.7:1, `semantic.warning`/`bg.canvas` 5.0:1. 다크: `text.primary`/`bg.canvas` 16.2:1, `brand.primary`/`bg.canvas` 7.3:1, `text.secondary`/`bg.surface` 7.7:1.
-- `text.tertiary`/`bg.surface`는 3.5:1이므로 플레이스홀더와 큰 텍스트에만 쓴다.
+- 계산으로 확인한 조합 (WCAG 상대 휘도 공식): `text.primary`/`bg.canvas` 15.6:1, `brand.primary`/`bg.canvas` 9.0:1, `text.secondary`/`bg.surface` 6.8:1, `brand.onPrimary`/`brand.primary` 9.6:1, `accent.brown`/`bg.canvas` 5.7:1, `semantic.income`/`bg.surface` 6.0:1, `semantic.danger`/`bg.surface` 5.7:1, `semantic.warning`/`bg.canvas` 5.0:1. 다크: `text.primary`/`bg.canvas` 16.2:1, `brand.primary`/`bg.canvas` 7.3:1, `text.secondary`/`bg.surface` 7.7:1.
+- `text.tertiary`는 2단계 접근성 감사(XCUITest contrast)를 반영해 어둡게 조정했다: 라이트 surface 5.4:1 / canvas 5.1:1 / subtle 4.7:1, 다크 surface 5.5:1. `semantic.income`은 subtle 배경에서 5.1:1.
+- 팔레트 색 위에는 흰 글자를 바로 쓰지 않는다. 아바타는 연한 팔레트 배경과 기본 텍스트색을 쓰고, 지갑 카드는 검정 40% 덮개를 씌워 흰 글자를 4.5:1 이상으로 유지한다.
 - `accent.gold`/`bg.canvas`는 2.75:1 → **텍스트에 쓰지 않는다**. 아이콘이나 장식에 쓸 때는 다른 단서(형태, 레이블)를 함께 둔다.
 - "대비 증가" 접근성 설정이 켜지면 `border.default`를 `border.strong`으로, `text.tertiary`를 `text.secondary`로 바꾼다.
 

@@ -87,6 +87,9 @@ struct WalletCardView: View {
             RoundedRectangle.dw(DWRadius.xl)
                 .fill(LinearGradient(colors: [Color(palette: card.color), Color(palette: card.color).opacity(0.82)],
                                      startPoint: .topLeading, endPoint: .bottomTrailing))
+            // 흰 글자가 모든 팔레트 색(라이트·다크)에서 4.5:1 이상이 되도록 어둡게 덮는다.
+            RoundedRectangle.dw(DWRadius.xl)
+                .fill(Color.black.opacity(0.4))
             LuckyDotPattern(dotSize: 7, spacing: 10)
                 .foregroundStyle(.white.opacity(0.12))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)

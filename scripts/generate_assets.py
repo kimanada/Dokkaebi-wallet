@@ -31,13 +31,13 @@ COLORS = {
     # 텍스트
     "textPrimary": ("#1E1E1C", "#F2F0EA"),
     "textSecondary": ("#5F5A52", "#B5B0A6"),
-    "textTertiary": ("#8F897E", "#7F7A71"),
+    "textTertiary": ("#6F695F", "#99948A"),
     # 테두리
     "borderDefault": ("#E6E0D4", "#33372F"),
     "borderStrong": ("#CFC6B5", "#4A4F46"),
     # 의미
-    "semanticIncome": ("#2E7D5B", "#7CC4A0"),
-    "semanticSuccess": ("#2E7D5B", "#7CC4A0"),
+    "semanticIncome": ("#28704F", "#7CC4A0"),
+    "semanticSuccess": ("#28704F", "#7CC4A0"),
     "semanticWarning": ("#95600F", "#E3B45C"),
     "semanticDanger": ("#B3412E", "#EE8A76"),
     "semanticInfo": ("#3A6A8C", "#8DB7D6"),

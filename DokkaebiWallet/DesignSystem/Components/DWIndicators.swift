@@ -29,7 +29,7 @@ struct DWBadge: View {
     var body: some View {
         Text(count > 99 ? "99+" : "\(count)")
             .font(DWTypography.caption.font.monospacedDigit())
-            .foregroundStyle(.white)
+            .foregroundStyle(DWColor.canvas)  // 다크 모드의 밝은 위험 색 위에서도 대비 확보
             .padding(.horizontal, 5)
             .frame(minWidth: 18, minHeight: 18)
             .background(DWColor.danger, in: Capsule())
@@ -99,11 +99,13 @@ struct DWAvatar: View {
     var size: CGFloat = 32
 
     var body: some View {
+        // 팔레트 색 위 흰 글자는 대비가 부족한 색이 있어, 연한 팔레트 배경 + 기본 텍스트색을 쓴다.
         Text(member.initial)
             .font(.system(size: size * 0.42, weight: .semibold))
-            .foregroundStyle(.white)
+            .foregroundStyle(DWColor.textPrimary)
             .frame(width: size, height: size)
-            .background(Color(palette: member.color), in: Circle())
+            .background(Color(palette: member.color).opacity(0.28), in: Circle())
+            .background(DWColor.surface, in: Circle())
             .overlay(Circle().strokeBorder(DWColor.surface, lineWidth: size > 28 ? 2 : 1.5))
             .accessibilityLabel(member.name)
     }
